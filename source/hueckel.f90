@@ -25,7 +25,7 @@ do i=1,natoms
 enddo
 
 print *
-print *,"Happy landing"
+print *,"Happy landing, well done!"
 
 100 format(X,'NATOM',X,'Element',3X,'X',9X,'Y',9X'Z')
 200 format(X,I3,4X,A2,3X,3F10.5)

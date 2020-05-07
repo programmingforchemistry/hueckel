@@ -3,14 +3,17 @@ FC= gfortran
 FOPT= -O2  
 LIB=-llapack -lblas
 
-OBJ= hueckel.o
+OBJ= hueckel.o rij.o readinput.o writeresult.o global.o
 
 
 hueckel.x: $(OBJ)
 	$(FC) $(FOPT) $(LIB) -o $@ $(OBJ)
 
-%.o: %.f90
+%.o: %.f90 global.mod
 	$(FC)  $(FOPT) -c $<
+
+global.mod: global.f90
+	$(FC) -c $<
 
 clean:
 	rm -rf *.o *.x

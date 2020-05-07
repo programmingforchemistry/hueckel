@@ -2,7 +2,7 @@ real(kind=8) function rij(i,j)
 use global
 implicit none
 
-integer::i,j
+integer,intent(in)::i,j
 
 real(kind=8),dimension(3)::dij
 

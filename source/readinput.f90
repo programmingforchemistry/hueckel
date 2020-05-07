@@ -3,8 +3,8 @@ use global
 implicit none
 
 
-integer::natoms
-character(len=80)::title
+integer,intent(out)::natoms
+character(len=80),intent(out)::title
 
 integer i
 

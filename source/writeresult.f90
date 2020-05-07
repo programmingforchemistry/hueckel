@@ -3,9 +3,9 @@ use global
 implicit none
 
 
-integer::natoms
-character(len=80)::title
-real(kind=8),dimension(maxatoms,maxatoms)::hmatrix
+integer,intent(in)::natoms
+character(len=80),intent(in)::title
+real(kind=8),dimension(maxatoms,maxatoms),intent(in)::hmatrix
 
 integer::i
 

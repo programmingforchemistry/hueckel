@@ -2,7 +2,6 @@ program hueckel
 use global
 implicit none
 
-
 integer :: natoms
 character(len=80)::title
 

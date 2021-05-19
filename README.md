@@ -1,6 +1,6 @@
 # hueckel
 Hueckel program for course "Introduction to High Level Programming for Chemistry Students"
-(c) 2020 Markus Oppel, University of Vienna
+(c) 2020-2021 Markus Oppel, University of Vienna
 
 This project contains the files of the first example program (hueckel). The final program is supposed
 read a molecule through a xzy file. It then sets up the hueckel matrix by checking for connectivities between different C atoms

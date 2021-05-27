@@ -30,5 +30,5 @@ global.mod: global.f90
 	$(FC) -c $<
 
 clean:
-	rm -rf *.o *.x
+	rm -rf *.o *.x *.mod
 

@@ -1,11 +1,13 @@
-subroutine writeresult(title,hmatrix)
+subroutine writeresult(title,hmatrix,eigval,ncarbon)
 use global
 use molecule
 implicit none
 
-
+integer::natoms,ncarbon
 character(len=80)::title
 real(kind=8),dimension(maxatoms,maxatoms)::hmatrix
+real(kind=8),dimension(maxatoms)::eigval
+
 
 integer::i
 
@@ -17,11 +19,18 @@ do i=1,molecel%natoms
         print 200,i, molecel%atoms(i)%element,molecel%atoms(i)%coordinates(1:3)
 enddo
 
+print *,"Eigenvalues"
+print *
+do i=1,ncarbon
+        print *,i,eigval(i)
+
+enddo
+
 
 print *,"Hueckel matrix"
 print *
-do i=1,molecel%natoms
-        print *,i,hmatrix(i,1:molecel%natoms)
+do i=1,ncarbon
+        print *,i,hmatrix(i,1:ncarbon)
 enddo
 
 print *

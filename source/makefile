@@ -18,7 +18,7 @@ OBJ= hueckel.o  readinput.o writeresult.o global.o molecule.o
 
 
 hueckel.x: $(OBJ)
-	$(FC) $(FOPT) $(LIB) -o $@ $(OBJ)
+	$(FC) $(FOPT) -o $@ $(OBJ) $(LIB) 
 
 %.o: %.f90 global.mod molecule.mod
 	$(FC)  $(FOPT) -c $<

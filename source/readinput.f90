@@ -1,29 +1,17 @@
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!                                                                      !
-! This file is part of Hueckel.                                        !
-!                                                                      !
-! Hueckel is free software; you can redistribute it and/or modify      !
-! it under the terms of the GNU Lesser General Public License, v. 2.1. !
-! Hueckel is distributed in the hope that it will be useful, but it    !
-! is provided "as is" and without any express or implied warranties.   !
-! For more details see the full text of the license in the file        !
-! LICENSE or in <http://www.gnu.org/licenses/>.                        !
-!                                                                      !
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-subroutine readinput(natoms,title)
+subroutine readinput(title)
 use global
+use molecule
 implicit none
 
 
-integer,intent(out)::natoms
-character(len=80),intent(out)::title
+character(len=80)::title
 
 integer i
 
-read(*,*) natoms
+read(*,*) molecel%natoms
 read(*,*) title
-do i=1,natoms
-        read(*,*) element(i),coordinates(i,1:3)
+do i=1,molecel%natoms
+        read(*,*) molecel%atoms(i)%element,molecel%atoms(i)%coordinates(1:3)
 enddo
 
 

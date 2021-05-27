@@ -14,14 +14,17 @@ FC= gfortran
 FOPT= -O2  
 LIB=-llapack -lblas
 
-OBJ= hueckel.o rij.o readinput.o writeresult.o global.o
+OBJ= hueckel.o  readinput.o writeresult.o global.o molecule.o
 
 
 hueckel.x: $(OBJ)
 	$(FC) $(FOPT) $(LIB) -o $@ $(OBJ)
 
-%.o: %.f90 global.mod
+%.o: %.f90 global.mod molecule.mod
 	$(FC)  $(FOPT) -c $<
+
+molecule.mod: molecule.f90 global.mod
+	$(FC) -c $<
 
 global.mod: global.f90
 	$(FC) -c $<
